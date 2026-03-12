@@ -10,7 +10,6 @@ const Index = () => {
         <AnoAI />
       </div>
       <div className="relative z-10">
-        <Navbar />
         <HeroSection />
         <FeaturesSection />
       </div>

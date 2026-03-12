@@ -15,17 +15,20 @@ import PredictiveIntelligence from "@/pages/PredictiveIntelligence";
 import PortfolioSimulation from "@/pages/PortfolioSimulation";
 import BudgetStrategy from "@/pages/BudgetStrategy";
 import MAModeling from "@/pages/MAModeling";
+import About from "@/pages/About";
 import { DemoOne } from "@/components/DemoOne";
+import { Navbar } from "@/components/landing/Navbar";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+    <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark" enableSystem>
       <TooltipProvider>
         <Toaster />
         <Sonner position="top-right" closeButton richColors />
         <BrowserRouter>
+          <Navbar />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/dashboard" element={<Dashboard />} />
@@ -37,6 +40,7 @@ const App = () => (
             <Route path="/portfolio-simulation" element={<PortfolioSimulation />} />
             <Route path="/budget-strategy" element={<BudgetStrategy />} />
             <Route path="/ma-modeling" element={<MAModeling />} />
+            <Route path="/about" element={<About />} />
             <Route path="/demo" element={<DemoOne />} />
             {/* Redirects */}
             <Route path="/analytics" element={<Navigate to="/org-analytics" replace />} />

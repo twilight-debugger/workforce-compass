@@ -1,36 +1,38 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { FlaskConical, GitCompareArrows, BrainCircuit } from "lucide-react";
+import { GlowingShadow } from "@/components/ui/glowing-shadow";
 
-const features = [
-  {
-    icon: FlaskConical,
-    title: "Simulate Scenarios",
-    description:
-      "Run Monte Carlo simulations on workforce risk with configurable strategies, seeds, and shock tests.",
-  },
-  {
-    icon: GitCompareArrows,
-    title: "Compare Strategies",
-    description:
-      "Evaluate baseline vs. aggressive vs. conservative approaches with side-by-side KPI breakdowns.",
-  },
-  {
-    icon: BrainCircuit,
-    title: "AI Explanations",
-    description:
-      "Get natural-language strategic recommendations powered by decision intelligence models.",
-  },
-];
 
 export function FeaturesSection() {
+  const { t } = useTranslation();
+
+  const features = [
+    {
+      icon: FlaskConical,
+      title: t('features.simulate.title'),
+      description: t('features.simulate.desc'),
+    },
+    {
+      icon: GitCompareArrows,
+      title: t('features.compare.title'),
+      description: t('features.compare.desc'),
+    },
+    {
+      icon: BrainCircuit,
+      title: t('features.ai.title'),
+      description: t('features.ai.desc'),
+    },
+  ];
+
   return (
     <section id="features" className="py-32 px-6">
       <div className="mx-auto max-w-5xl">
         <h2 className="mb-4 text-center text-3xl font-bold tracking-tight text-foreground">
-          How it works
+          {t('features.heading')}
         </h2>
         <p className="mb-16 text-center text-muted-foreground">
-          Three pillars of workforce decision intelligence.
+          {t('features.subheading')}
         </p>
         <div className="grid gap-12 md:grid-cols-3">
           {features.map((f, i) => (
@@ -40,12 +42,12 @@ export function FeaturesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15, duration: 0.5 }}
-              className="text-center"
+              className="group flex flex-col items-center text-center"
             >
-              <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-border bg-secondary">
-                <f.icon className="h-6 w-6 text-foreground" />
-              </div>
-              <h3 className="mb-2 text-lg font-semibold text-foreground">{f.title}</h3>
+              <GlowingShadow className="--card-width:120px; --card-radius:1.5rem; --glow-scale:0.85; --glow-opacity:0.6; --glow-blur:3; aspect-square mb-8 flex items-center justify-center border-none">
+                <f.icon className="h-10 w-10 text-foreground transition-transform duration-300 group-hover:scale-110" />
+              </GlowingShadow>
+              <h3 className="mb-3 text-xl font-semibold text-foreground">{f.title}</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">{f.description}</p>
             </motion.div>
           ))}

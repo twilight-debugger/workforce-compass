@@ -13,7 +13,7 @@ export default function Dashboard() {
         </div>
 
         {/* Right — Decision Panel (35%) */}
-        <aside className="w-[35%] overflow-y-auto p-6 space-y-6 bg-background">
+        <aside className="w-[35%] overflow-y-auto p-6 space-y-6 bg-background/50 backdrop-blur-md">
           <SimulationPanel />
           <DecisionPanel />
         </aside>

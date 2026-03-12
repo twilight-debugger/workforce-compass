@@ -1,9 +1,9 @@
-import AnoAI from "@/components/ui/animated-shader-background";
+import { Hero195 } from "@/components/ui/hero-195";
 
 const DemoOne = () => {
     return (
-        <div className="w-full h-screen bg-black">
-            <AnoAI />
+        <div className="min-h-screen bg-background">
+            <Hero195 />
         </div>
     );
 };

@@ -197,7 +197,8 @@ export function OrgGraph() {
           proOptions={{ hideAttribution: true }}
           className="bg-transparent"
         >
-          <Background color="hsl(var(--border))" gap={20} size={1} variant={BackgroundVariant.Dots} />
+          <Background color="hsl(var(--primary))" gap={20} size={1} variant={BackgroundVariant.Dots} style={{ opacity: 0.05 }} />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,transparent_0%,rgba(0,0,0,0.4)_100%)] pointer-events-none" />
 
           <Panel position="top-left" className="flex gap-2">
             <Button

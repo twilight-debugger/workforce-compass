@@ -1,13 +1,16 @@
+@import "tw-animate-css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import "tw-animate-css";
-
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -50,20 +53,23 @@ All colors MUST be HSL.
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --muted-2: 0 0% 90%;
+    --muted-2-foreground: 240 3.8% 46.1%;
+    --gradient-1: 227 81% 67%;
+    --gradient-2: 125 51% 53%;
+    --gradient-3: 318 58% 66%;
+    --font-sans: "Inter", sans-serif;
+    --font-serif: "Roboto Serif", serif;
+    --font-mono: "Roboto Mono", monospace;
+    --font-cursive: "Caveat", cursive;
   }
 
   .dark {
@@ -102,6 +108,12 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --muted-2: 0 0% 18%;
+    --muted-2-foreground: 240 2% 75%;
+    --gradient-1: 240 77% 25%;
+    --gradient-2: 125 51% 53%;
+    --gradient-3: 318 58% 66%;
   }
 }
 
